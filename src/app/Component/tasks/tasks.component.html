@@ -1,11 +1,15 @@
-<ng-container *ngIf="filteredTask.length > 0">
+<ng-container *ngIf="filteredTask.length > 0; then Tasks else noTask"></ng-container>
+
+<ng-template #Tasks>
   <app-task-item
     *ngFor="let task of filteredTask"
     [task]="task"
     (delete)="onDeleteClick($event)"
   ></app-task-item>
-</ng-container>
+</ng-template>
 
-<div *ngIf="filteredTask.length == 0">
+<ng-template #noTask >
   <p class="no-task">There are No Task</p>
-</div>
+</ng-template>
+
+
