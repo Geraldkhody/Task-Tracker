@@ -1,0 +1,11 @@
+<ng-container *ngIf="filteredTask.length > 0">
+  <app-task-item
+    *ngFor="let task of filteredTask"
+    [task]="task"
+    (delete)="onDeleteClick($event)"
+  ></app-task-item>
+</ng-container>
+
+<div *ngIf="filteredTask.length == 0">
+  <p class="no-task">There are No Task</p>
+</div>

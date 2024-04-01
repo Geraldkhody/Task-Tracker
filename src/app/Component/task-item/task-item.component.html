@@ -1,0 +1,7 @@
+<div class='task' [ngClass]="{'reminder' : isReminder}" (click)="reminderHandler()">
+    <h3>
+        {{task.text}} 
+        <p (click)="onDeleteClick()">x</p>
+    </h3>
+    <p>{{task.day}} </p>
+</div>
